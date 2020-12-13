@@ -1,0 +1,293 @@
+7-1
+코드
+#include <stdio.h>
+
+int main(void)
+{
+	printf("C언어 재미있네요!");
+	printf("C언어 재미있네요!");
+	printf("C언어 재미있네요!\n");
+
+	int n = 1;
+	printf("%d\n", n++);
+	printf("%d\n", n++);
+	printf("%d\n", n++);
+	printf("%d\n", n++);
+	printf("%d\n", n++);
+	printf("%d\n", n++);
+
+		return 0;
+}
+실행
+C언어 재미있네요!
+C언어 재미있네요!
+C언어 재미있네요!
+1
+2
+3
+4
+5
+6
+
+--------------------------------------------------------
+7-2
+코드
+#include <stdio.h>
+
+int main(void)
+{
+	double celcius = 12.46;
+
+	printf("섭씨 C 화씨 F\n");
+	printf("-----------------------\n");
+	printf("%8.2lf %8.2lf\n");
+
+	return 0;
+}
+실행
+섭씨 C 화씨 F
+-----------------------
+   12.46    54.43
+   22.46    72.43
+   32.46    90.43
+-------------------------------------------------------
+7-3
+코드
+#include <stdio.h>
+
+int main(void)
+{
+	int num = 13;
+	printf("정수 %d의 오른쪽 8비트 내부값:\n", num);
+	printf("%d", num >> 7 & 1);
+	printf("%d", num >> 6 & 1);
+	printf("%d", num >> 5 & 1);
+	printf("%d", num >> 4 & 1);
+	printf(" %d", num >> 3 & 1);
+	printf("%d", num >> 2 & 1);
+	printf("%d", num >> 1 & 1);
+	printf("%d\n", num >> 0 & 1);
+	return 0;
+}
+
+실행
+
+정수 13의 오른쪽 8비트 내부값:
+0000 1101
+-----------------
+7-4 
+코드
+#include <stdio.h>
+
+int main(void)
+{
+	int count = 1;
+
+	while (count <= 3)
+	{
+		printf("C 언어 재미있네요! \n");
+		count++;
+	}
+
+	printf("\n제어변수 count=> %d\n", count);
+
+	return 0;
+}
+결과
+C 언어 재미있네요!
+C 언어 재미있네요!
+C 언어 재미있네요!
+
+제어변수 count=> 4
+--------------------
+7-5
+코드
+
+#include <stdio.h>
+#define MAX 5
+
+int main(void)
+{
+	int n = 1;
+
+	while (n <= MAX) {
+		printf("%d\n", n++);
+	}
+
+	printf("\n제어변수 count +. %d\n", n);
+
+	return 0;
+}
+
+결과
+1
+2
+3
+4
+5
+
+제어변수 count => 6
+-------------------
+7-6
+코드
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+int main(void)
+{
+	int input;
+
+	do 
+	{
+		printf("정수 또는 종료(0)을 입력");
+		scanf("%d", &input);
+	} while (input != 0);
+		puts("종료합니다.");
+
+	return 0;
+}
+결과
+
+정수 또는 종료(0)을 입력7
+정수 또는 종료(0)을 입력6
+정수 또는 종료(0)을 입력1
+정수 또는 종료(0)을 입력0
+종료합니다.
+---------
+7-7
+코드
+#include <stdio.h>
+#define MAX 5
+
+int main(void)
+{
+	int n = 1;
+
+	do
+	{
+		printf("%d\n", n++);
+	} while (n <= MAX);
+	printf("\n제어변수 n => %d\n",n);
+
+	return 0;
+}
+결과
+1
+2
+3
+4
+5
+
+제어변수 n => 6
+
+-----
+7-8
+코드
+#include <stdio.h>
+#define MAX 5
+
+int main(void)
+{
+	int i;
+
+	for (i = 1; i <=MAX ; i++)
+	{
+		printf("C언어 재밌네요! %d\n",i);
+	}
+
+	printf("\n제어변수 i => %d\n", i);
+
+	return 0;
+}
+결과
+C언어 재밌네요! 1
+C언어 재밌네요! 2
+C언어 재밌네요! 3
+C언어 재밌네요! 4
+C언어 재밌네요! 5
+
+제어변수 i => 6
+---------------
+7-9
+#include <stdio.h>
+#define MAX 3
+#define INCREMENT 10
+
+int main(void)
+{
+	
+	double celcius = 12.46;
+
+	printf("섭씨 C 화씨 F\n");
+	printf("-----------------------\n");
+
+
+	for (int i = 1; i <= MAX; i++ , celcius += INCREMENT)
+	{
+		printf("%8.2lf %8.2lf\n",celcius,9.0/5 * celcius +32);
+	};
+
+	return 0;
+}
+
+결과
+
+섭씨 C 화씨 F
+-----------------------
+   12.46    54.43
+   22.46    72.43
+   32.46    90.43
+---
+7-10
+코
+#include <stdio.h>
+#define TOTAL_BIT 32
+
+int main(void)
+{
+	int num = 13;
+	printf("정수 %d의 %d의 내부값:\n",num,TOTAL_BIT);
+
+	for (int i = TOTAL_BIT-1;  i>=0; i--)
+	
+		printf("%d", num >> i & 1);
+
+	printf("\n");
+	
+	return 0;
+}
+결
+정수 13의 32비트 내부값:
+00000000000000000000000000001101
+---
+7-11
+#include <stdio.h>
+
+
+int main(void)
+{
+	int i, sum;
+
+	for (i = 1, sum = 0; i <= 10; i++)
+		sum += i;
+		printf("1에서 10까지의 합: %3d\n", sum);
+
+	for (i = 1, sum = 0; i <= 10;)
+		sum += i++;
+	printf("1에서 10까지의 합: %3d\n", sum);
+
+	for (i = 1, sum = 0; i <= 9;)
+		sum += ++i;
+	printf("1에서 10까지의 합: %3d\n", sum);
+
+	for (i = 1, sum = 0; i <= 10;sum += i++);
+	printf("1에서 10까지의 합: %3d\n", sum);
+
+	return 0;
+}
+결과
+1에서 10까지의 합:  55
+1에서 10까지의 합:  55
+1에서 10까지의 합:  55
+1에서 10까지의 합:  55
+
